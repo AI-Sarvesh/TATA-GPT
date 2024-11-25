@@ -18,6 +18,9 @@
             <h1 class="company-title">TATA Assistant</h1>
             <p class="subtitle">Powered by Advanced AI</p>
         </div>
+        <div class="close-chat">
+            <i class="fas fa-times"></i>
+        </div>
     </div>
     <div class="chat-box" id="chat-box">
         <div class="welcome-message">
@@ -129,5 +132,29 @@ document.getElementById('user-input').addEventListener('keyup', function(event) 
     }
 });
 </script>
+
+<!-- Chat Toggle Button -->
+<div class="chat-toggle-button">
+    <i class="fas fa-comments"></i>
+</div>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    const chatToggle = document.querySelector('.chat-toggle-button');
+    const chatContainer = document.querySelector('.chat-container');
+    const closeChat = document.querySelector('.close-chat');
+
+    chatToggle.addEventListener('click', function() {
+        chatContainer.classList.add('active');
+        chatToggle.style.display = 'none';
+    });
+
+    closeChat.addEventListener('click', function() {
+        chatContainer.classList.remove('active');
+        chatToggle.style.display = 'flex';
+    });
+});
+</script>
+
 </body>
 </html>
